@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   loadModel() async {
     await Tflite.loadModel(
       model: "assets/model_unquant.tflite",
-      labels: "assets/labels.txt",
+      labels: "assets/obj_labels.txt",
     );
   }
 
