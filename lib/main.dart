@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'ตรวจหน้ากาก',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
-        //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
@@ -61,13 +60,11 @@ loadModel() async {
     );
 }
 pickImage(bool yes) async {
-      count++;
-      print(count);
+    count++;
     var image = await ImagePicker.pickImage(source: yes?ImageSource.gallery:ImageSource.camera);
     if (image == null) return null;
     setState(() {
       _loading = true;
-      //Declare File _image in the class which is used to display the image on the screen. 
       _image = image; 
     });
     classifyImage(image);
@@ -83,7 +80,6 @@ classifyImage(File image) async {
     print("ML Out put = ${output}");
     setState(() {
       _loading = false;
-      //Declare List _outputs in the class which will be used to show the classified classs name and confidence
       _outputs = output;
     });
   }
